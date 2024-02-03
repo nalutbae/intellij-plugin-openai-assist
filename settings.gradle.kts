@@ -1,0 +1,1 @@
+rootProject.name = "intellij-plugin-openai-assist"

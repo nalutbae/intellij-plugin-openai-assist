@@ -1,0 +1,57 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.pinamu.ij.cgreview</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>OpenAI Coding Partner</name>
+    <version>0.1.0</version>
+    <vendor email="pinamu@gmail.com" url="https://github.com/pinamu">Pinamu</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+        Introducing the OpenAI Coding Partner plugin, designed to revolutionize your coding experience! <br>
+        With the help of OpenAI, this plugin provides you with the ability to generate source code and receive code reviews, making coding faster, more efficient, and more accurate. Say goodbye to the hours of staring at blank screens and confusing code.
+        With the OpenAI Coding Partner plugin, you can focus on the creative aspects of coding, while letting the AI take care of the rest. Try it out today and see how it can transform the way you code!<br><br>
+        <h3>Features available</h3>
+        <ul>
+            <li><b>Source Code Generation</b>: On the editor screen, place the cursor where the source code is to be created and press the shortcut key [Shift + Alt + Y] to enter a description of the source code to be created.</li>
+            <li><b>Code Review</b>: Click the right mouse button on the source code editor screen you want to review and select the [OpenAI Code Review] menu.</li>
+        </ul>
+
+  ]]></description>
+
+    <change-notes>
+        <![CDATA[
+      <ul>
+        <li><b>0.1.0</b> First release</li>
+      </ul>
+    ]]>
+    </change-notes>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="OpenAI Reviewer" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                    factoryClass="com.pinamu.ij.cgreview.OpenAICodeReviewWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <action id="com.pinamu.ij.cgreview.ReviewCodeAction" class="com.pinamu.ij.cgreview.ReviewCodeAction"
+                text="OpenAI Code Review" description="OpenAI code review">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+        <action id="com.pinamu.ij.cgreview.CodeGenerattionPromptAction"
+                class="com.pinamu.ij.cgreview.CodeGenerattionPromptAction" text="요청내용 입력">
+            <keyboard-shortcut first-keystroke="shift alt Y" keymap="$default"/>
+            <keyboard-shortcut first-keystroke="shift alt Y" keymap="Mac OS X"/>
+        </action>
+    </actions>
+</idea-plugin>
