@@ -1,4 +1,4 @@
-package com.pinamu.ij.cgreview;
+package com.nalutbae.intellij.code.review;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;

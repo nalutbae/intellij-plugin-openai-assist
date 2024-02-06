@@ -1,4 +1,4 @@
-package com.pinamu.ij.cgreview;
+package com.nalutbae.intellij.code.review;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;

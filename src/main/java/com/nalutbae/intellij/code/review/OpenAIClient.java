@@ -1,4 +1,4 @@
-package com.pinamu.ij.cgreview;
+package com.nalutbae.intellij.code.review;
 
 import okhttp3.*;
 import org.json.JSONArray;
